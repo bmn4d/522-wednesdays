@@ -7,6 +7,5 @@ for(i=0;i<Wednesdays.length-520;i++){
 	  res.on("data", data => {
 	    console.log(data)
 	var rePkg = /Package: .+(?!&nbsp)/;//Print the package type
-	var rePrice = new RegExp(date[i],\<\/span\>\<\/td><td><span>\d*\.\d*\s\-\s\d*\.\d*); //Print the date type, matching up with all the dates
-	string.match(rePrice);
-	}}};
+	var rePrice = /20\d{2}\<\/span\>\<\/td\>\<td\>\<span\>\d*\.\d*\s\-\s\d*\.\d*/;
+	})})};
