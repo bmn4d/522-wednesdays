@@ -6,12 +6,11 @@ for(i=0;i<Wednesdays.length-522;i++){
 	https.get(URL, res => {
 		res.setEncoding("utf8");
 	  	res.on("data", data => {
-	    	console.log(data)
-			var rePkg = /Package: .+(?!&nbsp)/g;//Print the package type
-			var pkg = rePkg.exec(rePkg);
-			var rePrice =/20\d{2}<\/span><\/td><td><span>\d*\.\d*\s\-\s\d*\.\d*/g;
-			var price = rePrice.exec(rePrice);
-			console.log(date[i], ",", pkg, ",", price);
+			var rePkg = /Package: (?:(?![&<]).)*/g;//Find the package type
+			console.log(data.match(rePkg));//and print it
+			var rePrice =/20\d{2}<\/span><\/td><td><span>\d*\.\d*\s\-\s\d*\.\d*/g;//Find the price
+			console.log(data.match(rePrice));//and print it
+			console.log(date[i]);
 			});
 	  	});
 	};
