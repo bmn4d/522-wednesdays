@@ -4,8 +4,11 @@ for(i=0;i<Wednesdays.length-520;i++){
 	var URL = "https://www.marketnews.usda.gov/mnp/fv-report-top-filters?type=termPrice&commAbr=BROC&locName=SAN+FRANCISCO&commName=BROCCOLI&startIndex=1&rowDisplayMax=25&portal=fv&navType=byComm&navClass=&termNavClass=&shipNavClass=&movNavClass=&stateID=&volume=&repType=termPriceDaily&locAbr=SX&environment=&varName=&organic=N&repDate="+Wednesdays[i]
 	https.get(URL, res => {
 		res.setEncoding("utf8");
-	  res.on("data", data => {
-	    console.log(data)
-	var rePkg = /Package: .+(?!&nbsp)/;//Print the package type
-	var rePrice = /20\d{2}\<\/span\>\<\/td\>\<td\>\<span\>\d*\.\d*\s\-\s\d*\.\d*/;
-	})})};
+	  	res.on("data", data => {
+	    	console.log(data)
+			var rePkg = /Package: .+(?!&nbsp)/;//Print the package type
+			var rePrice =/20\d{2}<\/span><\/td><td><span>\d*\.\d*\s\-\s\d*\.\d*/;
+			console.log(rePkg);
+			});
+	  	});
+	};
