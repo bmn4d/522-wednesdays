@@ -7,9 +7,11 @@ for(i=0;i<Wednesdays.length-522;i++){
 		res.setEncoding("utf8");
 	  	res.on("data", data => {
 	    	console.log(data)
-			var rePkg = /Package: .+(?!&nbsp)/;//Print the package type
-			var rePrice =/20\d{2}<\/span><\/td><td><span>\d*\.\d*\s\-\s\d*\.\d*/;
-			console.log(date[i], ",", rePkg, ",", rePrice);
+			var rePkg = /Package: .+(?!&nbsp)/g;//Print the package type
+			var pkg = rePkg.exec(rePkg);
+			var rePrice =/20\d{2}<\/span><\/td><td><span>\d*\.\d*\s\-\s\d*\.\d*/g;
+			var price = rePrice.exec(rePrice);
+			console.log(date[i], ",", pkg, ",", price);
 			});
 	  	});
 	};
