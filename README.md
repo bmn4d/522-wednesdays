@@ -3,7 +3,7 @@ Step 2: saving the part of the data you want in a format you can use
 Step 3: automating the process
 
 Preliminary:
-Make directory: `echo.> C:\Users\Dana\Desktop\Thesis\Data`
+Make directory: `echo.> C:\Users\Dana\Desktop\Thesis\522-wednesdays`
 
 Step 1: Get data from the website to print out in the command line
 `npm init -y` creates C:\Users\Dana\Desktop\Thesis\Data\package.json
